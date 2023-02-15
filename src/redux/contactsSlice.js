@@ -11,12 +11,12 @@ export const contactsSlice = createSlice({
   reducers: {
     addContact: {
       reducer(state, action) {
-        const array = state.contacts.filter(
+        const coincidence = state.contacts.find(
           contact =>
             contact.name.toLowerCase() === action.payload.name.toLowerCase()
         );
 
-        if (array.length > 0) {
+        if (coincidence) {
           alert(`${action.payload.name} is already in contacts`);
         } else {
           state.contacts.push(action.payload);

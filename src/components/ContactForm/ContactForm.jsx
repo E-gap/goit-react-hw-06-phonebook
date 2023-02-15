@@ -7,9 +7,11 @@ const ContactForm = () => {
 
   const handlerSubmit = event => {
     event.preventDefault();
+    const name = event.target.elements.name.value;
+    const number = event.target.elements.number.value;
     const contact = {
-      name: event.target.elements.name.value,
-      number: event.target.elements.number.value,
+      name,
+      number,
     };
     dispatch(addContact(contact));
     event.target.reset();
